@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BackgroundTimeModulePackage implements ReactPackage {
+public class BackgroundTimePackage implements ReactPackage {
   @NonNull
   @Override
   public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
-    modules.add(new BackgroundTimeModuleModule(reactContext));
+    modules.add(new BackgroundTimeModule(reactContext));
     return modules;
   }
 

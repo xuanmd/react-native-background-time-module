@@ -9,4 +9,8 @@
 @interface BackgroundTimeModule : NSObject <RCTBridgeModule>
 #endif
 
++ (instancetype)sharedInstance;
+
+- (void)setLastBackgroundTime;
+
 @end

@@ -11,11 +11,11 @@ npm install react-native-background-time-module
 ## Usage
 
 ```js
-import { multiply } from 'react-native-background-time-module';
+import { getElapseTime } from 'react-native-background-time-module';
 
 // ...
 
-const result = await multiply(3, 7);
+const result = await getElapseTime();
 ```
 
 ## Contributing

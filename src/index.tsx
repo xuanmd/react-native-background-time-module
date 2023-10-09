@@ -17,6 +17,6 @@ const BackgroundTimeModule = NativeModules.BackgroundTimeModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return BackgroundTimeModule.multiply(a, b);
+export function getElapseTime(): Promise<number> {
+  return BackgroundTimeModule.getElapseTime();
 }

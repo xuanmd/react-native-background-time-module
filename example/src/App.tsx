@@ -1,13 +1,28 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-background-time-module';
+import { StyleSheet, AppState, View, Text } from 'react-native';
+import { getElapseTime } from 'react-native-background-time-module';
 
 export default function App() {
+  const appState = React.useRef(AppState.currentState);
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    const subscription = AppState.addEventListener('change', (nextAppState) => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+        getElapseTime().then((backgroundTime) => {
+          setResult(backgroundTime);
+          console.log(backgroundTime, 'backgroundTime');
+        });
+      }
+
+      appState.current = nextAppState;
+    });
+
+    return () => subscription.remove();
   }, []);
 
   return (
