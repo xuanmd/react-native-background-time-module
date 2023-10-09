@@ -34,7 +34,7 @@ RCT_EXPORT_METHOD(getElapseTime:(RCTPromiseResolveBlock)resolve rejecter:(RCTPro
     NSTimeInterval currentTime = CACurrentMediaTime();
     NSTimeInterval elapsedTime = currentTime - lastBackgroundTime;
     NSNumber *elapsedTimeInSeconds = @(elapsedTime);
-    resolve(@[elapsedTimeInSeconds]);
+    resolve(elapsedTimeInSeconds);
 }
 
 @end
