@@ -1,11 +1,16 @@
 # react-native-background-time-module
 
-Get background time
+Get the amount of time that has passed since the last time the app was active and not affected by system time.
 
 ## Installation
 
 ```sh
-npm install react-native-background-time-module
+yarn add react-native-background-time-module
+```
+
+## Linking
+```sh
+npx pod-install
 ```
 
 ## Usage
